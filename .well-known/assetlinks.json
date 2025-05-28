@@ -1,1 +1,33 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "site.aquaxys.twa",
+      "sha256_cert_fingerprints": [
+        "75:FE:A7:2A:45:22:46:67:BD:0C:EE:FD:AA:FA:1F:69:CC:5C:FE:C4:3F:9D:AD:B2:4B:0C:7D:FA:7B:58:50:4E"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "site.aquaxys.cosyvoc",
+      "sha256_cert_fingerprints": [
+        "75:FE:A7:2A:45:22:46:67:BD:0C:EE:FD:AA:FA:1F:69:CC:5C:FE:C4:3F:9D:AD:B2:4B:0C:7D:FA:7B:58:50:4E"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aquaxys.aivoicemaker",
+      "sha256_cert_fingerprints": [
+        "75:FE:A7:2A:45:22:46:67:BD:0C:EE:FD:AA:FA:1F:69:CC:5C:FE:C4:3F:9D:AD:B2:4B:0C:7D:FA:7B:58:50:4E"
+      ]
+    }
+  }
+]
 
