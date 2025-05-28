@@ -1,0 +1,16 @@
+{
+  "name": "AI Voice Maker",
+  "short_name": "AIVoiceMaker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#50C878",
+  "icons": [
+    {
+      "src": "/static/img/AI_Voice_Maker_1024_1024.png.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "iconUrl": "https://aquaxys.site/static/img/AI_Voice_Maker_1024_1024.png"
+}
