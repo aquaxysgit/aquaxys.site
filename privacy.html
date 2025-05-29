@@ -29,14 +29,13 @@
       pointer-events: none;
     }
 
-    h1, h3 {
+    h1, h2, h3 {
       color: #ffffff;
     }
 
     h1 {
       border-bottom: 2px solid #555;
       padding-bottom: 10px;
-      margin-bottom: 30px;
     }
 
     section {
@@ -60,47 +59,57 @@
       padding-left: 20px;
     }
 
-    /* 모바일 전용 스타일 */
+    /* 기본: 모바일 제목 숨김, 데스크탑 제목 보임 */
     .mobile-title {
-      display: none; /* 기본 숨김 */
-      font-weight: bold;
+      display: none;
     }
 
+    .desktop-title {
+      display: block;
+    }
+
+    /* ✅ 모바일 전용 스타일 */
     @media (max-width: 768px) {
-      .mobile-title {
-        display: block;
-        font-size: 1.25em;
-        margin-bottom: 15px;
-      }
-      .desktop-title {
-        display: none;
+      h1 {
+        font-size: 1.5em;
+        border-bottom: none;
       }
 
       body::before {
         background-size: 100%;
       }
-    }
 
-    /* 데스크탑 전용 스타일 */
-    .desktop-title {
-      display: block;
-      font-weight: bold;
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
-
-    @media (min-width: 769px) {
-      .desktop-title {
+      /* 모바일용 2depth 제목만 보임 */
+      .mobile-title {
         display: block;
+        font-size: 1.25em;
+        margin-bottom: 10px;
+        color: #ffffff;
       }
+      /* 데스크탑용 2depth 제목 숨김 */
+      .desktop-title {
+        display: none;
+      }
+    }
+
+    /* ✅ 데스크탑 전용 스타일 */
+    @media (min-width: 769px) {
+      /* 모바일 제목 숨김 */
       .mobile-title {
         display: none;
+      }
+      /* 데스크탑 제목 보임 */
+      .desktop-title {
+        display: block;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #ffffff;
       }
     }
   </style>
 </head>
 <body>
-  <!-- 개인정보처리방침 제목 (h1, 항상 노출) -->
+  <!-- 최상위 제목 : 항상 h1 하나만 보임 -->
   <h1>개인정보처리방침</h1>
 
   <section>
@@ -108,7 +117,7 @@
   </section>
 
   <section>
-    <!-- 1. 수집하는 개인정보 항목 -->
+    <!-- 2depth 제목 분기처리: 모바일용 / 데스크탑용 -->
     <h3 class="mobile-title">1. 수집하는 개인정보 항목</h3>
     <h3 class="desktop-title">1. 수집하는 개인정보 항목</h3>
     <p>사용자가 앱 내 기능(예: 음성 → 텍스트, 텍스트 → 음성)을 사용할 때 업로드하는 음성 데이터<br>
@@ -120,7 +129,7 @@
   </section>
 
   <section>
-    <!-- 2. 개인정보의 수집 및 이용목적 -->
+    <!-- 2depth 제목 분기처리: 모바일용 / 데스크탑용 -->
     <h3 class="mobile-title">2. 개인정보의 수집 및 이용목적</h3>
     <h3 class="desktop-title">2. 개인정보의 수집 및 이용목적</h3>
     <p>수집된 음성 데이터는 다음 목적을 위해 사용됩니다.</p>
@@ -131,16 +140,12 @@
   </section>
 
   <section>
-    <!-- 3. 개인정보의 보유 및 이용기간 -->
-    <h3 class="mobile-title">3. 개인정보의 보유 및 이용기간</h3>
-    <h3 class="desktop-title">3. 개인정보의 보유 및 이용기간</h3>
+    <h3>3. 개인정보의 보유 및 이용기간</h3>
     <p>개발자는 음성 데이터를 서버에 저장하지 않으며, 사용자의 음성 데이터는 TTS 처리 후 즉시 폐기되며, 서버에 저장되지 않습니다.</p>
   </section>
 
   <section>
-    <!-- 4. 개인정보의 파기절차 및 방법 -->
-    <h3 class="mobile-title">4. 개인정보의 파기절차 및 방법</h3>
-    <h3 class="desktop-title">4. 개인정보의 파기절차 및 방법</h3>
+    <h3>4. 개인정보의 파기절차 및 방법</h3>
     <ul>
       <li>음성 데이터: TTS 처리가 완료된 즉시 삭제되며, 저장되지 않습니다.</li>
       <li>파기방법: 서버 처리 완료 후 자동 삭제</li>
@@ -148,58 +153,46 @@
   </section>
 
   <section>
-    <!-- 5. 개인정보 제공 -->
-    <h3 class="mobile-title">5. 개인정보 제공</h3>
-    <h3 class="desktop-title">5. 개인정보 제공</h3>
+    <h3>5. 개인정보 제공</h3>
     <p>개발자는 이용자의 개인정보를 외부에 제공하지 않습니다.</p>
   </section>
 
   <section>
-    <!-- 6. 개인정보의 위탁 -->
-    <h3 class="mobile-title">6. 개인정보의 위탁</h3>
-    <h3 class="desktop-title">6. 개인정보의 위탁</h3>
+    <h3>6. 개인정보의 위탁</h3>
     <p>본 앱은 외부 업체에 개인정보 처리를 위탁하지 않으며, 추후 위탁이 필요한 경우 이용자에게 사전 고지 및 동의를 받겠습니다.</p>
   </section>
 
   <section>
-    <!-- 7. 이용자의 권리와 행사 방법 -->
-    <h3 class="mobile-title">7. 이용자의 권리와 행사 방법</h3>
-    <h3 class="desktop-title">7. 이용자의 권리와 행사 방법</h3>
+    <h3>7. 이용자의 권리와 행사 방법</h3>
     <p>본 앱은 로그인 기능이 없으므로 이용자 본인 확인 절차가 없으며, 직접적인 개인정보 조회/수정/삭제 기능도 제공되지 않습니다. 다만, 관련 문의는 아래 연락처를 통해 요청하실 수 있습니다.</p>
   </section>
 
   <section>
-    <!-- 8. 자동 수집 장치 설치 및 거부 -->
-    <h3 class="mobile-title">8. 자동 수집 장치 설치 및 거부</h3>
-    <h3 class="desktop-title">8. 자동 수집 장치 설치 및 거부</h3>
+    <h3>8. 자동 수집 장치 설치 및 거부</h3>
     <p>본 앱은 쿠키 등의 자동 수집 장치를 사용하지 않습니다.</p>
   </section>
 
   <section>
-    <!-- 9. 개인정보에 관한 민원서비스 -->
+    <!-- 2depth 제목 분기처리: 모바일용 / 데스크탑용 -->
     <h3 class="mobile-title">9. 개인정보에 관한 민원서비스</h3>
     <h3 class="desktop-title">9. 개인정보에 관한 민원서비스</h3>
     <p>이용자는 개인정보 관련 민원을 다음 이메일로 문의할 수 있습니다.</p>
     <p>이메일: <a href="mailto:jinho.chun@gmail.com">jinho.chun@gmail.com</a></p>
     <p>아래 기관을 통해서도 개인정보 침해에 대한 상담을 받을 수 있습니다.</p>
     <ul>
-      <li>개인정보침해신고센터: <a href="https://privacy.kisa.or.kr" target="_blank">https://privacy.kisa.or.kr</a> / ☎ 118</li>
-      <li>대검찰청 사이버범죄수사단: <a href="https://www.spo.go.kr" target="_blank">https://www.spo.go.kr</a></li>
-      <li>경찰청 사이버안전국: <a href="https://ecrm.police.go.kr" target="_blank">https://ecrm.police.go.kr</a></li>
+      <li>개인정보침해신고센터: <a href="https://privacy.kisa.or.kr" target="_blank" rel="noopener noreferrer">https://privacy.kisa.or.kr</a> / ☎ 118</li>
+      <li>대검찰청 사이버범죄수사단: <a href="https://www.spo.go.kr" target="_blank" rel="noopener noreferrer">https://www.spo.go.kr</a></li>
+      <li>경찰청 사이버안전국: <a href="https://ecrm.police.go.kr" target="_blank" rel="noopener noreferrer">https://ecrm.police.go.kr</a></li>
     </ul>
   </section>
 
   <section>
-    <!-- 10. 기타 -->
-    <h3 class="mobile-title">10. 기타</h3>
-    <h3 class="desktop-title">10. 기타</h3>
+    <h3>10. 기타</h3>
     <p>앱 내 링크된 외부 웹사이트에서 개인정보를 수집하는 경우, 해당 사이트의 개인정보처리방침이 적용되며, 본 방침은 적용되지 않습니다.</p>
   </section>
 
   <section>
-    <!-- 11. 고지의 의무 -->
-    <h3 class="mobile-title">11. 고지의 의무</h3>
-    <h3 class="desktop-title">11. 고지의 의무</h3>
+    <h3>11. 고지의 의무</h3>
     <p>개인정보처리방침이 변경될 경우, 앱 내 또는 웹사이트를 통해 사전 고지합니다.</p>
     <p>공고일자: 2025년 5월 27일<br />시행일자: 2025년 5월 27일</p>
   </section>
